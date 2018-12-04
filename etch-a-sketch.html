@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Etch-a-Sketch</title>
+    <link href='./etch-a-sketch.css' type='text/css' rel='stylesheet'>
+</head>
+<body>
+    <button>New drawing area</button>
+    <div id="container"></div>
+
+
+<script>
+    const container = document.querySelector("#container");
+    const button = document.querySelector('button');
+    
+    let numSquares = prompt("How many squares would you like in the new drawing area?");
+    let squareDims = 960 / numSquares;
+    container.style.gridTemplate = `repeat(${numSquares}, ${squareDims}px) / repeat(${numSquares}, ${squareDims}px)`
+
+
+    for (let i=1; i < numSquares; i++) {
+        for (let j=1; j < numSquares; j++) {
+            let square = document.createElement("div");
+            square.className = "square";
+            square.style.gridArea = `${i} / ${j} / span 1 / span 1`;
+            container.appendChild(square);
+        }
+    }
+    function draw(e) {
+        if (e.target.id !== "container") {
+            e.target.style.backgroundColor = "#000066"
+        }
+    }
+
+    container.addEventListener("mousemove", draw)
+    button.addEventListener("click", e => {
+        location.reload();
+    })
+
+        
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+#container {
+    display: grid;
+    justify-content: center;
+}
+
+.square {
+    background-color: #ffffb3;
+}
+
+.draw {
+    background-color: #000066;
+}
