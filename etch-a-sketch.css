@@ -1,12 +1,24 @@
+body {
+    text-align: center;
+}
+
+#frame {
+    display: inline-block;
+    background-color: red;
+	margin-top: 50px;
+	border: 2px solid black;
+	border-radius: 25px;
+    padding: 0 110px 110px 110px;
+}
+
 #container {
     display: grid;
     justify-content: center;
+    background-color: lightgray
 }
 
 .square {
-    background-color: #ffffb3;
-}
-
-.draw {
-    background-color: #000066;
+    background-color: lightgray;
+    /* color for drawOpacity function
+    background-color: rgba(0, 0, 0, 0.0); */
 }
