@@ -71,8 +71,10 @@ p.toggle-label {
 
 .square {
     background-color: lightgray;
-    /* color for drawOpacity function
-    background-color: rgba(0, 0, 0, 0.0); */
+}
+
+.square-opacity {  /* color for drawOpacity function */
+    background-color: rgba(0, 0, 0, 0.0);
 }
 
 .slidecontainer {

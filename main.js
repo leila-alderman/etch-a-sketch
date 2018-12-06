@@ -17,7 +17,7 @@ function createBoard(numSquares) {
     for (let i=1; i < numSquares; i++) {
         for (let j=1; j < numSquares; j++) {
             let square = document.createElement("div");
-            square.className = "square";
+            square.classList.add("square");
             square.style.gridArea = `${i} / ${j} / span 1 / span 1`;
             container.appendChild(square);
         }
@@ -44,7 +44,6 @@ function drawColorful(e) {
 // Function to increase the opacity by 10% on each mouseover
 function drawOpacity(e) {
     if (e.target.id !== "container") {
-        console.log('Start :' + e.target.style.backgroundColor);
         let alphaStart = e.target.style.backgroundColor.slice(-4,-1);
         if (alphaStart === 1) {
             let alphaEnd = 1;
@@ -52,9 +51,6 @@ function drawOpacity(e) {
             alphaEnd = Number(alphaStart) + 0.1;
         }
         e.target.style.backgroundColor = `rgba(0, 0, 0, ${alphaEnd})`;
-        console.log(alphaStart);
-        console.log(alphaEnd);
-        console.log('End: ' + e.target.style.backgroundColor);
     }
 }
 
@@ -73,12 +69,26 @@ slider.oninput = function() {
 // Change drawing function for toggle switches
 let colorSwitch = document.getElementById("random-color");
 
-colorSwitch.addEventListener('change', (e) => {
-    if(this.checked) {
+colorSwitch.addEventListener("click", (e) => {
+    if(colorSwitch.checked) {
         container.removeEventListener("mousemove", draw);
         container.addEventListener("mousemove", drawColorful);
     } else {
         container.removeEventListener("mousemove", drawColorful);
+        container.addEventListener("mousemove", draw);
+    }
+});
+
+let opacitySwitch = document.getElementById("opacity");
+
+opacitySwitch.addEventListener("click", (e) => {
+    if (opacitySwitch.checked) {
+        let squares = document.getElementsByClassName('square');
+        squares.classList.add("square-opacity");
+        container.removeEventListener("mousemove", draw);
+        container.addEventListener("mousemove", drawOpacity);
+    } else {
+        container.removeEventListener("mousemove", drawOpacity);
         container.addEventListener("mousemove", draw);
     }
 });
