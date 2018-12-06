@@ -5,16 +5,54 @@ body {
 #frame {
     display: inline-block;
     background-color: red;
-	margin-top: 50px;
+	margin-top: 15px;
 	border: 2px solid black;
 	border-radius: 25px;
-    padding: 0 110px 110px 110px;
+    padding: 0 110px 0px 110px;
+    box-shadow: 5px 5px 10px black;
+}
+
+h1 {
+    color: goldenrod;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+h1 span {
+    font-family: 'Qwigley', cursive;
+    font-size: 80px;
+}
+
+#left-knob {
+    display: inline-block;
+    float: left;
+    background-color: white;
+    box-shadow: 5px 5px 10px black;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid lightgray;
+    margin: 15px 0px 20px -100px;
+}
+
+#right-knob {
+    display: inline-block;
+    float: right;
+    background-color: white;
+    box-shadow: 5px 5px 10px black;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 5px solid lightgray;
+    margin: 15px -100px 20px 0;
 }
 
 #container {
     display: grid;
     justify-content: center;
-    background-color: lightgray
+    background-color: lightgray;
+    box-shadow: 3px 3px 5px black, -3px -3px 5px black;
 }
 
 .square {
