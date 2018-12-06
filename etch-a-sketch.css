@@ -31,11 +31,11 @@ p {
     font-size: 20px;
     color: goldenrod;
     text-shadow: 1px 1px 2px #000000;
-    margin: 2px 5px;
+    margin: 10px 5px 0px 5px;
 }
 
 p.toggle-label {
-    margin: -3px 5px 2px 5px;
+    margin: -3px 45px 2px 20px;
 }
 
 #left-knob {
@@ -46,7 +46,7 @@ p.toggle-label {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    border: 5px solid lightgray;
+    border: 8px solid lightgray;
     margin: 15px 0px 20px -100px;
 }
 
@@ -58,7 +58,7 @@ p.toggle-label {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    border: 5px solid lightgray;
+    border: 8px solid lightgray;
     margin: -90px -100px 20px 0;
 }
 
@@ -71,10 +71,6 @@ p.toggle-label {
 
 .square {
     background-color: lightgray;
-}
-
-.square-opacity {  /* color for drawOpacity function */
-    background-color: rgba(0, 0, 0, 0.0);
 }
 
 .slidecontainer {
@@ -96,18 +92,18 @@ p.toggle-label {
 .slider::-webkit-slider-thumb { /* Set slider handle properties for Chrome, Opera, Safari, Edge */
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%; 
-    background: darkslategrey;
+    background: white;
     cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb { /* Set slider handle properties for Firefox */
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background: darkslategrey;
+    background: white;
     cursor: pointer; /* Cursor on hover */
 }
 
@@ -122,11 +118,11 @@ p.toggle-label {
 
 .random-color {
     float: left;
-    margin-left: 75px;
+    margin-left: 90px;
 }
 
-.opacity {
-    margin-left: 30px; 
+.erase {
+    margin-left: 50px; 
 }
   
 /* Hide default HTML checkbox */

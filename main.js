@@ -27,7 +27,14 @@ function createBoard(numSquares) {
 // Function to change grid squares to navy
 function draw(e) {
     if (e.target.id !== "container") {
-        e.target.style.backgroundColor = "#000066"
+        e.target.style.backgroundColor = "#000066";
+    }
+}
+
+// Function to return grid squares to the background color
+function erase(e) {
+    if (e.target.id !== "container") {
+        e.target.style.backgroundColor = "lightgray";
     }
 }
 
@@ -79,16 +86,14 @@ colorSwitch.addEventListener("click", (e) => {
     }
 });
 
-let opacitySwitch = document.getElementById("opacity");
+let eraseSwitch = document.getElementById("erase");
 
-opacitySwitch.addEventListener("click", (e) => {
-    if (opacitySwitch.checked) {
-        let squares = document.getElementsByClassName('square');
-        squares.classList.add("square-opacity");
+eraseSwitch.addEventListener("click", (e) => {
+    if (eraseSwitch.checked) {
         container.removeEventListener("mousemove", draw);
-        container.addEventListener("mousemove", drawOpacity);
+        container.addEventListener("mousemove", erase);
     } else {
-        container.removeEventListener("mousemove", drawOpacity);
+        container.removeEventListener("mousemove", erase);
         container.addEventListener("mousemove", draw);
     }
 });
